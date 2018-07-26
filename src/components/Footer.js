@@ -74,6 +74,15 @@ const Footer = props => {
           </li>
           <li>
             <a
+              href="https://github.com/russellgoldenberg/scrollama"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Scrollama
+            </a>
+          </li>
+          <li>
+            <a
               href="https://d3js.org/"
               target="_blank"
               rel="noopener noreferrer"
@@ -83,11 +92,11 @@ const Footer = props => {
           </li>
           <li>
             <a
-              href="https://github.com/russellgoldenberg/scrollama"
+              href="https://vx-demo.now.sh/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Scrollama
+              vx
             </a>
           </li>
         </Ul>

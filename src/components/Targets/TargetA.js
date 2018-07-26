@@ -13,10 +13,7 @@ class TargetA extends React.Component {
     const { progress, color } = this.props;
     return (
       <Container color={color}>
-        <h1>I am Target A</h1>
-        <p>{`My <Step> was scrolled at: ${Math.round(
-          progress * 100
-        )}% height`}</p>
+        <svg width={200} height={200} preserveAspectRatio="xMinYMin meet" />
       </Container>
     );
   }

@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { max, descending } from "d3-array";
+import { scaleBand, scaleOrdinal } from "d3-scale";
+import { species, seeds, preferences, feeders, entries } from "../data";
 import Step from "./Step";
-import TargetA from "./Targets/TargetA";
-import TargetB from "./Targets/TargetB";
+import { BirdChart } from "./Charts/BirdChart";
 import styled from "styled-components";
 
 const ScrollContainer = styled.div`
@@ -23,34 +25,63 @@ const ScrollText = styled.div`
   max-width: 30rem;
 `;
 
+// console.log("preferences", preferences)
+
 class Scrollable extends Component {
-  stories = [
-    {
-      title: "Title 1",
-      description:
-        "some text which describes this story. Maybe it's a long text. Maybe not. Who knows?",
-      target: TargetA,
-      targetProps: { color: "blue" }
-    },
-    {
-      title: "Title 2",
-      description: "some short text",
-      target: TargetB,
-      targetProps: { color: "red", data: [1, 2, 3] }
-    },
-    {
-      title: "Title C",
-      description: "some text which describes this story.",
-      target: TargetB,
-      targetProps: { color: "green", data: [4, 5, 6] }
-    },
-    {
-      title: "Title IV",
-      description: "some text",
-      target: TargetA,
-      targetProps: { color: "purple" }
-    }
-  ];
+  seedScale = scaleBand().domain(seeds);
+  preferenceScale = scaleBand().domain(preferences);
+  feederScale = scaleBand().domain(feeders);
+  colorScale = scaleOrdinal()
+    .domain(preferences)
+    // https://www.materialui.co/colors
+    // .range(["#f44336", "#FFC107", "#8BC34A"]);
+    // http://colorbrewer2.org/
+    .range(["#f0f0f0", "#bdbdbd", "#636363"]);
+
+  zScale = scaleOrdinal()
+    .domain(species)
+    .range([
+      "#a6cee3",
+      "#1f78b4",
+      "#b2df8a",
+      "#33a02c",
+      "#fb9a99",
+      "#e31a1c",
+      "#fdbf6f",
+      "#ff7f00",
+      "#cab2d6",
+      "#6a3d9a"
+    ]);
+
+  stories = entries.map((d, i) => {
+    const obj = {
+      stepProps: {
+        title: d.name,
+        description: d.feeders,
+        backgroundColor: this.zScale(d.name)
+      },
+      target: BirdChart,
+      targetProps: {
+        // showDebug: true,
+        width: 400,
+        height: 500,
+        margin: {
+          top: 10,
+          right: 10,
+          bottom: 30,
+          left: 150
+        },
+        backgroundColor: this.zScale(d.name),
+        scales: {
+          seed: this.seedScale,
+          preference: this.preferenceScale,
+          color: this.colorScale
+        },
+        seeds: d.seeds
+      }
+    };
+    return obj;
+  });
   render() {
     const { index, progress, direction } = this.props;
     const story = this.stories[index];
@@ -68,8 +99,7 @@ class Scrollable extends Component {
           {this.stories.map((d, i) => {
             return (
               <Step
-                title={d.title}
-                description={d.description}
+                {...d.stepProps}
                 className={
                   i === index ? "is-active scroll__step" : "scroll__step"
                 }

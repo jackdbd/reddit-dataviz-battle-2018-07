@@ -6,16 +6,30 @@ const Div = styled.div`
   flex-direction: column;
   height: ${props => props.height};
   &.is-active {
-    background-color: yellow;
+    background-color: ${props => props.backgroundColor};
   }
 `;
 
+const Ul = styled.ul`
+  padding-left: 1em;
+  list-style-type: none;
+`;
+
 const Step = props => {
-  const { title, description, className, height } = props;
+  const { title, description, className, height, backgroundColor } = props;
   return (
-    <Div className={className} height={height}>
+    <Div
+      className={className}
+      height={height}
+      backgroundColor={backgroundColor}
+    >
       <h1>{title}</h1>
-      <p>{description}</p>
+      <p>TODO: add some description</p>
+      <Ul>
+        {description.map((d, i) => {
+          return <li key={i}>{d}</li>;
+        })}
+      </Ul>
     </Div>
   );
 };
