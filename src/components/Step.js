@@ -10,8 +10,13 @@ const Div = styled.div`
   }
 `;
 
+const P = styled.p`
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-left: 40px;
+`;
+
 const Ul = styled.ul`
-  padding-left: 1em;
   list-style-type: none;
 `;
 
@@ -23,7 +28,8 @@ const Step = props => {
       height={height}
       backgroundColor={backgroundColor}
     >
-      <h1>{title}</h1>
+      <h1 style={{ textAlign: "center" }}>{title}</h1>
+      <P>Favourite feeders:</P>
       <Ul>
         {description.map((d, i) => {
           return <li key={i}>{d}</li>;

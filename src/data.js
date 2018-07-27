@@ -134,6 +134,89 @@ export const entries = [
       { name: seeds[8], preference: preferences[2] }
     ],
     feeders: [feeders[0], feeders[3], feeders[4]]
+  },
+  //
+  {
+    name: species[8],
+    seeds: [
+      { name: seeds[0], preference: preferences[2] },
+      { name: seeds[1], preference: preferences[1] },
+      { name: seeds[2], preference: preferences[1] },
+      { name: seeds[6], preference: preferences[0] },
+      { name: seeds[7], preference: preferences[0] }
+    ],
+    feeders: [feeders[0], feeders[1], feeders[5]]
+  },
+  {
+    name: species[9],
+    seeds: [
+      { name: seeds[0], preference: preferences[2] },
+      { name: seeds[1], preference: preferences[1] },
+      { name: seeds[2], preference: preferences[2] },
+      { name: seeds[3], preference: preferences[0] },
+      { name: seeds[5], preference: preferences[2] }
+    ],
+    feeders: [feeders[0], feeders[2]]
+  },
+  {
+    name: species[10],
+    seeds: [
+      { name: seeds[0], preference: preferences[0] },
+      { name: seeds[1], preference: preferences[0] },
+      { name: seeds[2], preference: preferences[2] },
+      { name: seeds[5], preference: preferences[2] },
+      { name: seeds[8], preference: preferences[0] }
+    ],
+    feeders: [feeders[1], feeders[2]]
+  },
+  {
+    name: species[11],
+    seeds: [
+      { name: seeds[0], preference: preferences[2] },
+      { name: seeds[1], preference: preferences[2] },
+      { name: seeds[2], preference: preferences[2] },
+      { name: seeds[3], preference: preferences[2] },
+      { name: seeds[4], preference: preferences[1] },
+      { name: seeds[7], preference: preferences[0] },
+      { name: seeds[8], preference: preferences[1] }
+    ],
+    feeders: [feeders[0], feeders[1], feeders[3]]
+  },
+  {
+    name: species[12],
+    seeds: [
+      { name: seeds[0], preference: preferences[2] },
+      { name: seeds[1], preference: preferences[1] },
+      { name: seeds[2], preference: preferences[1] },
+      { name: seeds[5], preference: preferences[0] },
+      { name: seeds[6], preference: preferences[1] },
+      { name: seeds[7], preference: preferences[0] }
+    ],
+    feeders: [feeders[0], feeders[1], feeders[3], feeders[5]]
+  },
+  {
+    name: species[13],
+    seeds: [
+      { name: seeds[0], preference: preferences[2] },
+      { name: seeds[1], preference: preferences[2] },
+      { name: seeds[2], preference: preferences[2] },
+      { name: seeds[3], preference: preferences[0] },
+      { name: seeds[6], preference: preferences[0] },
+      { name: seeds[7], preference: preferences[0] },
+      { name: seeds[8], preference: preferences[0] }
+    ],
+    feeders: [feeders[0], feeders[3], feeders[4]]
+  },
+  {
+    name: species[14],
+    seeds: [
+      { name: seeds[0], preference: preferences[1] },
+      { name: seeds[1], preference: preferences[1] },
+      { name: seeds[2], preference: preferences[2] },
+      { name: seeds[6], preference: preferences[0] },
+      { name: seeds[7], preference: preferences[0] },
+      { name: seeds[8], preference: preferences[0] }
+    ],
+    feeders: [feeders[0], feeders[3], feeders[5]]
   }
-  // TODO nutatches
 ];

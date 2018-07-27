@@ -68,7 +68,7 @@ class Scrollable extends Component {
           top: 10,
           right: 10,
           bottom: 30,
-          left: 150
+          left: 160
         },
         backgroundColor: this.zScale(d.name),
         scales: {

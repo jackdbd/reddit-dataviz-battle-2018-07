@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { AxisLeft, AxisBottom } from "@vx/axis";
 import { Bar } from "@vx/shape";
-import { Text } from "@vx/text";
+// import { Text } from "@vx/text";
 import D3MarginConvention from "./D3MarginConvention";
 import DebugSVG from "./DebugSVG";
 

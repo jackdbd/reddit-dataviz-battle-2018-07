@@ -22,11 +22,16 @@ const Intro = props => (
       <a
         href="https://www.reddit.com/r/dataisbeautiful/comments/8vhxhq/battle_dataviz_battle_for_the_month_of_july_2018"
         target="_blank"
+        rel="noopener noreferrer"
       >
         DataViz battle for the month of July 2018
       </a>{" "}
       organized by the{" "}
-      <a href="https://www.reddit.com/r/dataisbeautiful/" target="_blank">
+      <a
+        href="https://www.reddit.com/r/dataisbeautiful/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         dataisbeautiful
       </a>{" "}
       subreddit.

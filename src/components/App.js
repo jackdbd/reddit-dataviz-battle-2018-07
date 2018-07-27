@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Intro from "./Intro";
 import Scrollama from "./Scrollama";
-import Footer from "./Footer";
+import Outro from "./Outro";
 
 class App extends Component {
   render() {
@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <Intro backgroundColor={"#d3d3d3"} />
         <Scrollama />
-        <Footer backgroundColor={"#d3d3d3"} />
+        <Outro backgroundColor={"#d3d3d3"} />
       </div>
     );
   }

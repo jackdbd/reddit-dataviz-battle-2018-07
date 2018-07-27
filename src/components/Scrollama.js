@@ -10,8 +10,8 @@ const options = {
   graphic: ".scroll__graphic",
   text: ".scroll__text",
   offset: 0.5,
-  progress: true,
-  debug: true
+  progress: true
+  // debug: true
 };
 
 class Scrollama extends Component {
