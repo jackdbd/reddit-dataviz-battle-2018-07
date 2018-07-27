@@ -22,9 +22,9 @@ const Footer = props => {
       <Div>
         <h5>About</h5>
         <span>
-          Code (TODO):{" "}
+          Code:{" "}
           <a
-            href="https://github.com/jackdbd/dataviz-challenge-munich"
+            href="https://github.com/jackdbd/reddit-dataviz-battle-2018-07"
             target="_blank"
             rel="noopener noreferrer"
           >

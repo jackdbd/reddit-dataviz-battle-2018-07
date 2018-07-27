@@ -9,7 +9,7 @@ const options = {
   container: ".scroll__container",
   graphic: ".scroll__graphic",
   text: ".scroll__text",
-  offset: 0.3,
+  offset: 0.5,
   progress: true,
   debug: true
 };

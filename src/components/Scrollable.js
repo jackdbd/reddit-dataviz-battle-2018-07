@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { max, descending } from "d3-array";
 import { scaleBand, scaleOrdinal } from "d3-scale";
 import { species, seeds, preferences, feeders, entries } from "../data";
 import Step from "./Step";
@@ -28,14 +27,13 @@ const ScrollText = styled.div`
 // console.log("preferences", preferences)
 
 class Scrollable extends Component {
+  width = 600;
+  height = 400;
   seedScale = scaleBand().domain(seeds);
   preferenceScale = scaleBand().domain(preferences);
   feederScale = scaleBand().domain(feeders);
   colorScale = scaleOrdinal()
     .domain(preferences)
-    // https://www.materialui.co/colors
-    // .range(["#f44336", "#FFC107", "#8BC34A"]);
-    // http://colorbrewer2.org/
     .range(["#f0f0f0", "#bdbdbd", "#636363"]);
 
   zScale = scaleOrdinal()
@@ -58,13 +56,14 @@ class Scrollable extends Component {
       stepProps: {
         title: d.name,
         description: d.feeders,
+        height: this.height,
         backgroundColor: this.zScale(d.name)
       },
       target: BirdChart,
       targetProps: {
         // showDebug: true,
-        width: 400,
-        height: 500,
+        width: this.width,
+        height: this.height,
         margin: {
           top: 10,
           right: 10,
@@ -82,6 +81,10 @@ class Scrollable extends Component {
     };
     return obj;
   });
+
+  // componentDidMount() {
+  //   this.setState({height: document.documentElement.clientHeight})
+  // }
   render() {
     const { index, progress, direction } = this.props;
     const story = this.stories[index];
@@ -92,9 +95,11 @@ class Scrollable extends Component {
       direction,
       ...story.targetProps
     };
-    const height = "500px";
     return (
-      <ScrollContainer className="scroll__container">
+      <ScrollContainer
+        className="scroll__container"
+        style={{ fontFamily: "Kalam" }}
+      >
         <ScrollText className="scroll__text">
           {this.stories.map((d, i) => {
             return (
@@ -104,7 +109,7 @@ class Scrollable extends Component {
                   i === index ? "is-active scroll__step" : "scroll__step"
                 }
                 key={i}
-                height={height}
+                height={this.height}
               />
             );
           })}
@@ -112,7 +117,7 @@ class Scrollable extends Component {
         <ScrollGraphic
           className="scroll__graphic"
           style={{
-            height: height
+            height: this.height
           }}
         >
           <Target {...targetProps} />

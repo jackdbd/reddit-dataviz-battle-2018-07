@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Div = styled.div`
   display: flex;
   flex-direction: column;
-  height: ${props => props.height};
+  height: ${props => props.height}px;
   &.is-active {
     background-color: ${props => props.backgroundColor};
   }

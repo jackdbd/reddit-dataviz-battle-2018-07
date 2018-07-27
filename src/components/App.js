@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import Intro from "./Intro";
 import Scrollama from "./Scrollama";
-import Outro from "./Outro";
+import Footer from "./Footer";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Intro />
+        <Intro backgroundColor={"#d3d3d3"} />
         <Scrollama />
-        <Outro />
+        <Footer backgroundColor={"#d3d3d3"} />
       </div>
     );
   }
