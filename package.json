@@ -2,6 +2,7 @@
   "name": "reddit-dataviz-battle-2018-07",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jackdbd.github.io/reddit-dataviz-battle-2018-07",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
