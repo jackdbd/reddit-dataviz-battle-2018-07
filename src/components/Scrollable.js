@@ -32,24 +32,13 @@ class Scrollable extends Component {
   seedScale = scaleBand().domain(seeds);
   preferenceScale = scaleBand().domain(preferences);
   feederScale = scaleBand().domain(feeders);
+  // http://colorbrewer2.org
   colorScale = scaleOrdinal()
     .domain(preferences)
     .range(["#f0f0f0", "#bdbdbd", "#636363"]);
-
   zScale = scaleOrdinal()
     .domain(species)
-    .range([
-      "#a6cee3",
-      "#1f78b4",
-      "#b2df8a",
-      "#33a02c",
-      "#fb9a99",
-      "#e31a1c",
-      "#fdbf6f",
-      "#ff7f00",
-      "#cab2d6",
-      "#6a3d9a"
-    ]);
+    .range(["#1b9e77", "#d95f02", "#7570b3", "#e7298a", "#66a61e"]);
 
   stories = entries.map((d, i) => {
     const obj = {
@@ -59,8 +48,8 @@ class Scrollable extends Component {
         height: this.height,
         backgroundColor: this.zScale(d.name)
       },
-      target: BirdChart,
-      targetProps: {
+      graphic: BirdChart,
+      graphicProps: {
         // showDebug: true,
         width: this.width,
         height: this.height,
@@ -88,12 +77,12 @@ class Scrollable extends Component {
   render() {
     const { index, progress, direction } = this.props;
     const story = this.stories[index];
-    const Target = story.target;
-    const targetProps = {
+    const Graphic = story.graphic;
+    const graphicProps = {
       index,
       progress,
       direction,
-      ...story.targetProps
+      ...story.graphicProps
     };
     return (
       <ScrollContainer
@@ -120,7 +109,7 @@ class Scrollable extends Component {
             height: this.height
           }}
         >
-          <Target {...targetProps} />
+          <Graphic {...graphicProps} />
         </ScrollGraphic>
       </ScrollContainer>
     );
